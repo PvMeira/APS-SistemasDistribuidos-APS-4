@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+    <title>Mural</title>
+
+    <meta charset="utf-8">
+
+    <link href="components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="components/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+
+    <script src="components/angular/angular.min.js"></script>
+    <script src="components/angular-resource.min.js"></script>
+    <script src="components/angular-route/angular-route.min.js"></script>
+    <script src="components/angular-route/angular-route.js"></script>
+    <script src="js/masterController.js"></script>
+
+    <style>
+        .mbottom {
+            margin-bottom: 10px;
+        }
+    </style>
+
+</head>
+<body>
+<div ng-controller="MasterController">
+    <div class="container">
+        <textarea style="width: 1306px;height: 468px;" ng-model="pool" ng-list="&#10;" ng-trim="false"></textarea>
+    </div>
+    <form ng-submit="addMessage()">
+        <div class="row mbottom">
+            <div class="col-xs-3 text-right">
+                Nome:
+            </div>
+            <div class="col-xs-9">
+                <input type="text" class="form-control" ng-model="message.name" required>
+            </div>
+        </div>
+        <div class="row mbottom">
+            <div class="col-xs-3 text-right">
+                Mensagem:
+            </div>
+            <div class="col-xs-9">
+                <input type="text" class="form-control" ng-model="message.message" required>
+            </div>
+        </div>
+        <div class="row mbottom">
+            <div class="col-xs-9 col-xs-offset-3">
+                <button class="btn btn-danger" type="submit">
+                    <span class=" glyphicon glyphicon-floppy-save" aria-hidden="true"></span>
+                    Inserir
+                </button>
+                <button class="btn btn-danger" type="reset">
+                    <span class="glyphicon glyphicon-erase" aria-hidden="true"></span>
+                    Limpar
+                </button>
+            </div>
+        </div>
+    </form>
+
+</div>
+<script src="components/jquery/dist/jquery.min.js"></script>
+<script src="components/bootstrap/dist/js/bootstrap.min.js"></script>
+</body>
+</html>
